@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Satoshi";
+    src: url("../../public/font/satoshi-cufonfonts/Satoshi-Light.otf") format("opentype");
+    /* Add other font formats and font properties as needed */
+  }
+  
+  body {
+    font-family: "Satoshi", ;
+  }
+  
+// ###################################### style for index page ####################################
+.wrapper{
+margin-top:5%;
+}
+
+.bg-img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mobile {
+  object-fit: contain;
+  height: 800px;
+  width: 370px;
+}
+
+.btn-link {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, white, rgba(128, 128, 128, 0.425));
+  border-image-slice: 1;
+}
+
+
+.index-page-header{
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.index-page-sub-header{
+    width:650px;
+    font-weight: 200;
+}
+
+.mobile-div{
+  top:13%;
+  left:40%;
+
+}
