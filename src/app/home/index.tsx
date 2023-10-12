@@ -42,7 +42,7 @@ export const Index = () => {
             className="absolute text-center mt-24 text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
             <p className="index-page-header">
-              Pay yourself{" "}
+              Pay yourself
               <span className="font-medium">anytime, any day!</span>
             </p>
             <p className="index-page-sub-header">
