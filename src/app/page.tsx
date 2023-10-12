@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Index } from './home'
 import './page.scss'
 
