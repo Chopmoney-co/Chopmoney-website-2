@@ -1,5 +1,5 @@
 import { Index } from "./home";
-import "./page.scss";
+
 
 
 export default function Home() {

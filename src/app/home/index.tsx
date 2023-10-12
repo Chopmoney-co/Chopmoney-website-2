@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { BackgroundImg, IndexPhone } from "../../../public/images";
 import { useTransform, useScroll, motion } from "framer-motion";
 import "styled-jsx/style";
+import '../page.scss'
 
 export const Index = () => {
   const targetRef = useRef<HTMLDivElement>(null);
