@@ -15,7 +15,8 @@
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.69.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "styled-jsx": "^5.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",

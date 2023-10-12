@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { BackgroundImg, IndexPhone } from "../../../public/images";
 import { useTransform, useScroll, motion } from "framer-motion";
+import "styled-jsx/style";
 
 export const Index = () => {
   const targetRef = useRef<HTMLDivElement>(null);
