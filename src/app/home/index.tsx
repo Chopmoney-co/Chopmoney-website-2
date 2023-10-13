@@ -1,18 +1,35 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { BackgroundImg, IndexPhone } from "../../../public/images";
 import { useTransform, useScroll, motion } from "framer-motion";
 import "styled-jsx/style";
 import '../page.scss'
+import Lenis from '@studio-freight/lenis'
+
 
 export const Index = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 3.2]);
-  // Adjust the range and values as needed for your desired fade-out effect
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0, 0.1], [1, 0.0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 6.5]);
+    // const x = useTransform(scrollYProgress, [0.3, 1], ["50%", "50%"]);
+useEffect(()=>{
+  const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+//   console.log(e)
+// })
+
+function raf(time:any) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+},[])
 
   return (
     <>
@@ -20,8 +37,8 @@ export const Index = () => {
         <div className="relative w-screen h-[100vh] wrapper">
           <motion.div
             className="absolute mobile-div"
-            style={{ scale }}
-            initial={false} // Set initial to false to start with the scale at 1
+            style={{ scale,opacity : opacity2}}
+            initial={false} 
             animate={{ scale: 1 }}
           >
             <Image alt="mobile" src={IndexPhone} className="mobile"></Image>
@@ -29,7 +46,6 @@ export const Index = () => {
           <motion.div
             style={{ opacity }}
             ref={targetRef}
-            // Use style prop instead of placing directly inside motion.div
           >
             <Image
               alt="bg"
@@ -41,11 +57,11 @@ export const Index = () => {
           <motion.div
             style={{ opacity }}
             ref={targetRef}
-            className="absolute text-center mt-24 text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute text-center mt-24 text-div text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
             <p className="index-page-header">
               Pay yourself
-              <span className="font-medium">anytime, any day!</span>
+              <span className="font-medium"> anytime, any day!</span>
             </p>
             <p className="index-page-sub-header">
               Enjoy life while sticking to your budget with Chopmoney. Whether
@@ -63,9 +79,10 @@ export const Index = () => {
           </motion.div>
         </div>
       </motion.section>
-      <section className="w-full h-screen bg-black">
+      {/* <section className="w-full h-screen bg-black">
         <div className="h-screen">check if this is working</div>
-      </section>
+      </section> */}
     </>
   );
 };
+
